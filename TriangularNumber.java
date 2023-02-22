@@ -14,6 +14,10 @@ public class TriangularNumber {
         System.out.println(text);
         return input.nextInt();
     }
+
+    public static int getTriangularNumber(int number) {
+        return number * (number + 1) / 2;
+    }
 }
 
 // 1. Получение порядка числа от пользователя
