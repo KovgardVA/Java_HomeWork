@@ -7,11 +7,13 @@ public class TriangularNumber {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        
+        int n = getNumberFromUser("Введите порядковый номер треугольного числа: ");
+        int result = getTriangularNumber(n);
+        System.out.printf("Треугольное число, стоящее под номером %d, равно %d.", n, result);
     }
 
     public static int getNumberFromUser(String text) {
-        System.out.println(text);
+        System.out.print(text);
         return input.nextInt();
     }
 
