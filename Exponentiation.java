@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -65,6 +66,16 @@ public class Exponentiation {
     public static String formatToUse(double number) {
         NumberFormat nf = new DecimalFormat();
         return String.valueOf(nf.format(number));
+    }
+
+    // Запись в файл
+    public static void write(String data) {
+        try (FileWriter fw = new FileWriter("output.txt", false)) {
+            fw.write(data);
+            fw.flush();
+            } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+            }
     }
 }
 
