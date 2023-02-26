@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 public class Exponentiation {
     public static void main(String[] args) throws FileNotFoundException, IOException {
@@ -57,6 +59,12 @@ public class Exponentiation {
         if (pow > 1) return num * (power(num, --pow));
         if (pow < 1) return 1 / num * power(num, ++pow);
         return num;
+    }
+
+    // Получение форматированной строки для записи в файл
+    public static String formatToUse(double number) {
+        NumberFormat nf = new DecimalFormat();
+        return String.valueOf(nf.format(number));
     }
 }
 
