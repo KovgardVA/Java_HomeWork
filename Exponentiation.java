@@ -33,6 +33,22 @@ public class Exponentiation {
     public static String clean(String data) {
         return data.replaceAll("[^\\w+]", "");
     }
+
+    // Обработка информации в соответствии с условием
+    public static int[] getNumbers(String data) {
+        int[] numberAndPower = new int[2];
+        char[] charArray = data.toCharArray();
+
+        if (charArray[0] == 'a') {
+            numberAndPower[0] = Integer.parseInt(String.valueOf(charArray[1]));
+            numberAndPower[1] = Integer.parseInt(String.valueOf(charArray[3]));
+        } else {
+            numberAndPower[0] = Integer.parseInt(String.valueOf(charArray[3]));
+            numberAndPower[1] = Integer.parseInt(String.valueOf(charArray[1]));
+        }
+
+        return numberAndPower;
+    }
 }
 
 // 1. Считывание строки с файла
