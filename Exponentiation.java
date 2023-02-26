@@ -12,7 +12,7 @@ public class Exponentiation {
         data = clean(data);
 
         int[] numberAndPower = getNumbers(data);
-        double number = (double)numberAndPower[0];
+        double number = (double) numberAndPower[0];
         int power = numberAndPower[1];
         double result = power(number, power);
 
@@ -20,8 +20,9 @@ public class Exponentiation {
     }
 
     // Считывание информации с файла
-    public static String read(String path) throws FileNotFoundException, IOException{
+    public static String read(String path) throws FileNotFoundException, IOException {
         String data = "";
+        
         BufferedReader br = new BufferedReader(new FileReader(path));
         try {
             StringBuilder sb = new StringBuilder();
@@ -33,10 +34,10 @@ public class Exponentiation {
                 line = br.readLine();
             }
             data = sb.toString();
-        }
-        finally {
+        } finally {
             br.close();
         }
+
         return data;
     }
 
@@ -63,10 +64,14 @@ public class Exponentiation {
 
     // Возведение в степень
     public static double power(double num, int pow) {
-        if (num == 0 && pow <= 0) System.out.println("Не определено.");
-        if (num == 1 || num == 0) return num;
-        if (pow > 1) return num * (power(num, --pow));
-        if (pow < 1) return 1 / num * power(num, ++pow);
+        if (num == 0 && pow <= 0)
+            System.out.println("Не определено.");
+        if (num == 1 || num == 0)
+            return num;
+        if (pow > 1)
+            return num * (power(num, --pow));
+        if (pow < 1)
+            return 1 / num * power(num, ++pow);
         return num;
     }
 
@@ -81,9 +86,9 @@ public class Exponentiation {
         try (FileWriter fw = new FileWriter("output.txt", false)) {
             fw.write(data);
             fw.flush();
-            } catch (IOException ex) {
+        } catch (IOException ex) {
             System.out.println(ex.getMessage());
-            }
+        }
     }
 }
 
