@@ -8,7 +8,15 @@ import java.text.NumberFormat;
 
 public class Exponentiation {
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        
+        String data = read("input.txt");
+        data = clean(data);
+
+        int[] numberAndPower = getNumbers(data);
+        double number = (double)numberAndPower[0];
+        int power = numberAndPower[1];
+        double result = power(number, power);
+
+        write(formatToUse(result));
     }
 
     // Считывание информации с файла
