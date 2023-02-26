@@ -49,6 +49,15 @@ public class Exponentiation {
 
         return numberAndPower;
     }
+
+    // Возведение в степень
+    public static double power(double num, int pow) {
+        if (num == 0 && pow <= 0) System.out.println("Не определено.");
+        if (num == 1 || num == 0) return num;
+        if (pow > 1) return num * (power(num, --pow));
+        if (pow < 1) return 1 / num * power(num, ++pow);
+        return num;
+    }
 }
 
 // 1. Считывание строки с файла
