@@ -22,7 +22,7 @@ public class Exponentiation {
     // Считывание информации с файла
     public static String read(String path) throws FileNotFoundException, IOException {
         String data = "";
-        
+
         BufferedReader br = new BufferedReader(new FileReader(path));
         try {
             StringBuilder sb = new StringBuilder();
@@ -64,8 +64,9 @@ public class Exponentiation {
 
     // Возведение в степень
     public static double power(double num, int pow) {
-        if (num == 0 && pow <= 0)
-            System.out.println("Не определено.");
+        if (num == 0 && pow <= 0) {
+            throw new ArithmeticException("Не определено.");
+        }
         if (num == 1 || num == 0)
             return num;
         if (pow > 1)
