@@ -1,6 +1,8 @@
 public class MergeSort {
     public static void main(String[] args) {
-        
+        int[] myArray = createArray(8);
+        fill(myArray, 10, 20);
+        System.out.print(print(myArray));
     }
 
     public static int[] createArray(int size) {
