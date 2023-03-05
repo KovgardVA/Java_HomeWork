@@ -2,7 +2,7 @@ public class MergeSort {
     public static void main(String[] args) {
         int[] myArray = createArray(8);
         fill(myArray, 10, 20);
-        System.out.print(print(myArray));
+        System.out.println(print(myArray));
     }
 
     public static int[] createArray(int size) {
@@ -22,6 +22,46 @@ public class MergeSort {
             result += array[i] + " ";
         }
         return result;
+    }
+
+    public static void mergeSort(int[] array) {
+        int size = array.length;
+
+        if (size < 2) return;
+
+        int mid = size / 2;
+
+        int[] leftSide = new int[mid];
+        System.arraycopy(array, 0, leftSide, 0, mid);
+
+        int[] rightSide = new int[size - mid];
+        System.arraycopy(array, mid, rightSide, 0, size - mid);
+
+        mergeSort(leftSide);
+        mergeSort(rightSide);
+
+        merge(array, leftSide, rightSide);
+    }
+
+    public static void merge(int[] array, int[] leftSide, int[] rightSide) {
+        int sizeL = leftSide.length;
+        int sizeR = rightSide.length;
+
+        int i = 0, j = 0, k = 0;
+        while (i < sizeL && j < sizeR) {
+            if (leftSide[i] <= rightSide[j]) {
+                array[k++] = leftSide[i++];
+            }
+            else {
+                array[k++] = rightSide[j++];
+            }
+        }
+        while (i < sizeL) {
+            array[k++] = leftSide[i++];
+        }
+        while (j < sizeR) {
+            array[k++] = rightSide[j++];
+        }
     }
 }
 
