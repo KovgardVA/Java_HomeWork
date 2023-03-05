@@ -7,6 +7,13 @@ public class MergeSort {
         int[] array = new int[size];
         return array;
     }
+
+    public static int[] fill(int[] array, int minNumber, int maxNumber) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = ((int)(Math.random() * ((maxNumber - minNumber) + 1)) + minNumber);
+        }
+        return array;
+    }
 }
 
 // 1. Создание массива
