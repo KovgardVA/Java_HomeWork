@@ -3,6 +3,9 @@ public class MergeSort {
         int[] myArray = createArray(8);
         fill(myArray, 10, 20);
         System.out.println(print(myArray));
+        
+        mergeSort(myArray);
+        System.out.print(print(myArray));
     }
 
     public static int[] createArray(int size) {
