@@ -13,6 +13,14 @@ public class MergeSort {
             array[i] = ((int)(Math.random() * ((maxNumber - minNumber) + 1)) + minNumber);
         }
     }
+
+    public static String print(int[] array) {
+        String result = "";
+        for (int i = 0; i < array.length; i++) {
+            result += array[i] + " ";
+        }
+        return result;
+    }
 }
 
 // 1. Создание массива
