@@ -8,11 +8,10 @@ public class MergeSort {
         return array;
     }
 
-    public static int[] fill(int[] array, int minNumber, int maxNumber) {
+    public static void fill(int[] array, int minNumber, int maxNumber) {
         for (int i = 0; i < array.length; i++) {
             array[i] = ((int)(Math.random() * ((maxNumber - minNumber) + 1)) + minNumber);
         }
-        return array;
     }
 }
 
