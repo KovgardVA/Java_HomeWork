@@ -46,7 +46,19 @@ public class HeapSort {
         return top;
     }
 
-    
+    public static void heapSort(int[] array) {
+        int n = array.length;
+
+        int i = (n - 2) / 2;
+        while (i >= 0) {
+            heapify(array, i--, n);
+        }
+
+        while (n > 0) {
+            array[n - 1] = removeElement(array, n);
+            n --;
+        }
+    }
 }
 
 /*  Двоичная куча 
