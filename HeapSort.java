@@ -6,7 +6,7 @@ public class HeapSort {
     public static int getLeft(int index) {
         return (2 * index + 1);
     }
-    
+
     public static int getRight(int index) {
         return (2 * index + 2);
     }
@@ -56,17 +56,27 @@ public class HeapSort {
 
         while (n > 0) {
             array[n - 1] = removeElement(array, n);
-            n --;
+            n--;
         }
+    }
+
+    static String printArray(int[] array) {
+        String result = "";
+        for (int i = 0; i < array.length; i++) {
+            result += array[i] + " ";
+        }
+        return result;
     }
 }
 
-/*  Двоичная куча 
-         4(0)
-        /   \
-    10(1)    3(2)
-    /   \
-5(3)    1(4) */
+/*
+ * Двоичная куча
+ * 4(0)
+ * / \
+ * 10(1) 3(2)
+ * / \
+ * 5(3) 1(4)
+ */
 
 // Левый элемент - 2i + 1
 // Правый элемент - 2i + 2
