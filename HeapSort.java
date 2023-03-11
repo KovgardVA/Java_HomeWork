@@ -1,6 +1,8 @@
 public class HeapSort {
     public static void main(String[] args) {
-        
+        int[] array = { 12, 6, 10, 5, 1, 9 };
+        heapSort(array);
+        System.out.println(print(array));
     }
 
     public static int getLeft(int index) {
@@ -60,7 +62,7 @@ public class HeapSort {
         }
     }
 
-    static String printArray(int[] array) {
+    static String print(int[] array) {
         String result = "";
         for (int i = 0; i < array.length; i++) {
             result += array[i] + " ";
@@ -87,5 +89,6 @@ public class HeapSort {
 // 1.3. Right - возвращает правый элемент
 // 2. Сортировка (pop + heapify)
 // 2.1 Remove - меняем первый и последний элемент кучи местами
-// и возвращаем макс элемент в конец, "отсекая" его из виду
+// и возвращаем макс элемент в конец, уменьшая длину сортировки
+// кучи
 // 3. Вывод
