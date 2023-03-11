@@ -17,6 +17,24 @@ public class HeapSort {
         array[j] = temp;
     }
 
+    public static void heapify(int[] array, int i, int size) {
+        int left = getLeft(i);
+        int right = getRight(i);
+        int largest = i;
+
+        if (left < size && array[left] > array[i]) {
+            largest = left;
+        }
+        if (right < size && array[right] > array[largest]) {
+            largest = right;
+        }
+
+        if (largest != i) {
+            swapElements(array, i, largest);
+            heapify(array, largest, size);
+        }
+    }
+
     
 }
 
