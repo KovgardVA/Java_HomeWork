@@ -2,7 +2,7 @@ public class HeapSort {
     public static void main(String[] args) {
         
     }
-    
+
     public static int getLeft(int index) {
         return (2 * index + 1);
     }
@@ -10,6 +10,14 @@ public class HeapSort {
     public static int getRight(int index) {
         return (2 * index + 2);
     }
+
+    public static void swapElements(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+
+    
 }
 
 /*  Двоичная куча 
@@ -27,5 +35,6 @@ public class HeapSort {
 // 1.2. Left - возвращает левый элемент двоичного дерева
 // 1.3. Right - возвращает правый элемент
 // 2. Сортировка (pop + heapify)
-// 2.1 Pop - меняем первый и последний элемент кучи местами и "отсекаем"
+// 2.1 Remove - меняем первый и последний элемент кучи местами
+// и возвращаем макс элемент в конец, "отсекая" его из виду
 // 3. Вывод
