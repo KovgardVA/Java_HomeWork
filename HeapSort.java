@@ -2,6 +2,14 @@ public class HeapSort {
     public static void main(String[] args) {
         
     }
+    
+    public static int getLeft(int index) {
+        return (2 * index + 1);
+    }
+    
+    public static int getRight(int index) {
+        return (2 * index + 2);
+    }
 }
 
 /*  Двоичная куча 
