@@ -35,6 +35,17 @@ public class HeapSort {
         }
     }
 
+    public static int removeElement(int[] array, int size) {
+        if (size <= 0) {
+            return -1;
+        }
+        int top = array[0];
+
+        array[0] = array[size - 1];
+        heapify(array, 0, size - 1);
+        return top;
+    }
+
     
 }
 
