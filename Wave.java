@@ -1,6 +1,7 @@
 public class Wave {
     public static void main(String[] args) {
-
+        int[][] map = getMap();
+        System.out.println(mapToString(map));
     }
     
     public static int[][] getMap() {
@@ -21,6 +22,19 @@ public class Wave {
                 { -1, 00, 00, 00, 00, 00, -1, 00, -1 },
                 { -1, -1, -1, -1, -1, -1, -1, -1, -1 }
         };
+    }
+
+    public static String mapToString(int[][] map) {
+        StringBuilder sb = new StringBuilder();
+
+        for (int row = 0; row < map.length; row++) {
+            for (int col = 0; col < map[row].length; col++) {
+                sb.append(String.format("%2d ", map[row][col]));
+            }
+            sb.append("\n");
+        }
+
+        return sb.toString();
     }
 }
 
