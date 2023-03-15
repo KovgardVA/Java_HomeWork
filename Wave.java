@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Wave {
     public static void main(String[] args) {
         int[][] map = getMap();
@@ -40,6 +43,40 @@ public class Wave {
 
     public static int[] getPoint2D(int x, int y) {
         return new int[] { x, y };
+    }
+
+    public static void wave(int[][] map, int[] startPos) {
+
+        Queue<int[]> queue = new LinkedList<int[]>();
+        queue.add(startPos);
+        map[startPos[0]][startPos[1]] = 1;
+
+        while (queue.size() != 0) {
+            int[] position = queue.remove();
+            int posX = position[0];
+            int posY = position[1];
+
+            if (map[posX - 1][posY] == 0) {
+                int[] temp = new int[] { posX - 1, posY };
+                queue.add(temp);
+                map[posX - 1][posY] = map[posX][posY] + 1;
+            }
+            if (map[posX][posY - 1] == 0) {
+                int[] temp = new int[] { posX, posY - 1 };
+                queue.add(temp);
+                map[posX][posY - 1] = map[posX][posY] + 1;
+            }
+            if (map[posX + 1][posY] == 0) {
+                int[] temp = new int[] { posX + 1, posY };
+                queue.add(temp);
+                map[posX + 1][posY] = map[posX][posY] + 1;
+            }
+            if (map[posX][posY + 1] == 0) {
+                int[] temp = new int[] { posX, posY + 1 };
+                queue.add(temp);
+                map[posX][posY + 1] = map[posX][posY] + 1;
+            }
+        }
     }
 }
 
