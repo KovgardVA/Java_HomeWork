@@ -2,8 +2,9 @@ public class Wave {
     public static void main(String[] args) {
         int[][] map = getMap();
         System.out.println(mapToString(map));
+        int[] startPoint = getPoint2D(9, 2);
     }
-    
+
     public static int[][] getMap() {
         return new int[][] {
                 { -1, -1, -1, -1, -1, -1, -1, -1, -1 },
@@ -35,6 +36,10 @@ public class Wave {
         }
 
         return sb.toString();
+    }
+
+    public static int[] getPoint2D(int x, int y) {
+        return new int[] { x, y };
     }
 }
 
