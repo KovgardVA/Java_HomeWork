@@ -6,6 +6,8 @@ public class Wave {
         int[][] map = getMap();
         System.out.println(mapToString(map));
         int[] startPoint = getPoint2D(9, 2);
+        wave(map, startPoint);
+        System.out.println(mapToString(map));
     }
 
     public static int[][] getMap() {
