@@ -16,9 +16,9 @@ public class Wave {
         );
 
         var road = wa.getRoad(new Point2D(3, 5));
-        for (Point2D move : road) {
-            System.out.println(move.toString());
-        }
+        System.out.println(
+            new RoadPrinter().roadToString(road)
+        );
     }
 }
 
@@ -96,6 +96,19 @@ class MapPrinter {
             sb.append("\n");
         }
 
+        return sb.toString();
+    }
+}
+
+class RoadPrinter {
+    public RoadPrinter() {
+    }
+
+    public String roadToString(ArrayList<Point2D> road) {
+        StringBuilder sb = new StringBuilder();
+        for (Point2D move : road) {
+            sb.append(move.toString() + "\n");
+        }
         return sb.toString();
     }
 }
