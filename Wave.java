@@ -39,9 +39,9 @@ public class Wave {
         return sb.toString();
     }
 
-    public static int[] getPoint2D(int x, int y) {
-        return new int[] { x, y };
-    }
+    // public static int[] getPoint2D(int x, int y) {
+    //     return new int[] { x, y };
+    // }
 
     public static void wave(int[][] map, int[] startPos) {
 
@@ -75,6 +75,28 @@ public class Wave {
                 map[posX][posY + 1] = map[posX][posY] + 1;
             }
         }
+    }
+}
+
+class Point2D {
+    int x, y;
+
+    public Point2D(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("x: %d y: %d", x, y);
     }
 }
 
