@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -10,7 +11,14 @@ public class Wave {
 
         var wa = new WaveAlgorithm(mg.getMap());
         wa.waves(new Point2D(9, 2));
-        System.out.println(new MapPrinter().mapToString(mg.getMap()));
+        System.out.println(
+            new MapPrinter().mapToString(mg.getMap())
+        );
+
+        var road = wa.getRoad(new Point2D(3, 5));
+        for (Point2D move : road) {
+            System.out.println(move.toString());
+        }
     }
 }
 
@@ -124,6 +132,37 @@ class WaveAlgorithm {
                 map[pos.x][pos.y + 1] = map[pos.x][pos.y] + 1;
             }
         }
+    }
+    
+    public ArrayList<Point2D> getRoad(Point2D exit) {
+        ArrayList<Point2D> road = new ArrayList<>();
+        road.add(new Point2D(exit.x, exit.y));
+        Point2D pos = exit;
+
+        while (map[pos.x][pos.y] != 1) {
+            if (map[pos.x - 1][pos.y] == map[pos.x][pos.y] - 1) {
+                pos.x = pos.x - 1;
+                pos.y = pos.y;
+                road.add(new Point2D(pos.x, pos.y));
+            }
+            if (map[pos.x][pos.y - 1] == map[pos.x][pos.y] - 1) {
+                pos.x = pos.x;
+                pos.y = pos.y - 1;
+                road.add(new Point2D(pos.x, pos.y));
+            }
+            if (map[pos.x + 1][pos.y] == map[pos.x][pos.y] - 1) {
+                pos.x = pos.x + 1;
+                pos.y = pos.y;
+                road.add(new Point2D(pos.x, pos.y));
+            }
+            if (map[pos.x][pos.y + 1] == map[pos.x][pos.y] - 1) {
+                pos.x = pos.x;
+                pos.y = pos.y + 1;
+                road.add(new Point2D(pos.x, pos.y));
+            }
+        }
+
+        return road;
     }
 }
 
