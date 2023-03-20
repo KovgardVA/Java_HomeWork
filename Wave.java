@@ -128,6 +128,14 @@ class MapGenerator {
     public int[][] getMap() {
         return map;
     }
+
+    public void setStart(Point2D pos) {
+        map[pos.x][pos.y] = 1;
+    }
+
+    public void setExit(Point2D pos) {
+        map[pos.x][pos.y] = -5;
+    }
 }
 
 // 1. Генератор карты getMap
