@@ -26,18 +26,18 @@ public class Wave {
     // };
     // }
 
-    public static String mapToString(int[][] map) {
-        StringBuilder sb = new StringBuilder();
+    // public static String mapToString(int[][] map) {
+    // StringBuilder sb = new StringBuilder();
 
-        for (int row = 0; row < map.length; row++) {
-            for (int col = 0; col < map[row].length; col++) {
-                sb.append(String.format("%2d ", map[row][col]));
-            }
-            sb.append("\n");
-        }
+    // for (int row = 0; row < map.length; row++) {
+    // for (int col = 0; col < map[row].length; col++) {
+    // sb.append(String.format("%2d ", map[row][col]));
+    // }
+    // sb.append("\n");
+    // }
 
-        return sb.toString();
-    }
+    // return sb.toString();
+    // }
 
     // public static int[] getPoint2D(int x, int y) {
     //     return new int[] { x, y };
@@ -135,6 +135,24 @@ class MapGenerator {
 
     public void setExit(Point2D pos) {
         map[pos.x][pos.y] = -5;
+    }
+}
+
+class MapPrinter {
+    public MapPrinter() {
+    }
+    
+    public String mapToString(int[][] map) {
+        StringBuilder sb = new StringBuilder();
+
+        for (int row = 0; row < map.length; row++) {
+            for (int col = 0; col < map[row].length; col++) {
+                sb.append(String.format("%2d ", map[row][col]));
+            }
+            sb.append("\n");
+        }
+
+        return sb.toString();
     }
 }
 
