@@ -19,6 +19,11 @@ public class Wave {
         System.out.println(
             new RoadPrinter().roadToString(road)
         );
+
+        wa.paintRoad(road);
+        System.out.println(
+            new MapPrinter().mapToString(mg.getMap())
+        );
     }
 }
 
@@ -176,6 +181,12 @@ class WaveAlgorithm {
         }
 
         return road;
+    }
+
+    public void paintRoad(ArrayList<Point2D> road) {
+        for (Point2D move : road) {
+            map[move.x][move.y] = -5;
+        }
     }
 }
 
